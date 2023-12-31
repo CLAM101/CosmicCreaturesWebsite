@@ -1,73 +1,112 @@
+$small-screen-start: 0px;
+$small-screen-end: 650px;
+$medium-screen-start: 650px;
+$medium-screen-end: 1200px;
+$large-screen-start: 1200px;
+$large-screen-end: 3000px;
+
+@mixin respond-to($size) {
+  @if $size == small {
+    @media (min-width: $small-screen-start) and (max-width: $small-screen-end) {
+      @content;
+    }
+  } @else if $size == medium {
+    @media (min-width: $medium-screen-start) and (max-width: $medium-screen-end) {
+      @content;
+    }
+  } @else if $size == large {
+    @media (min-width: $large-screen-start) and (max-width: $large-screen-end) {
+      @content;
+    }
+  } @else if $size == extra-large {
+    @media (min-width: $extra-large-screen-start) and (max-width: $extra-large-screen-end) {
+      @content;
+    }
+  }
+}
+
 .main-container {
   background-color: #0b0825;
+
+  @include respond-to(small) {
+    height: 2500px;
+    width: auto;
+  }
+
+  @include respond-to(medium) {
+    height: 3000px;
+  }
+
+  @include respond-to(large) {
+    height: 5300px;
+  }
+}
+
+.top-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
   height: 5300px;
   width: 100%;
   margin: 0;
-  text-align: center;
-}
 
-.top-image {
-  width: 100%;
-  height: 1620px;
-}
-.pink-creature {
-  position: absolute;
-  top: auto;
-  left: 0;
-}
+  @include respond-to(small) {
+    height: 1100px;
+  }
 
-.blue-creature {
-  position: absolute;
-  width: 44%;
-  height: 1303px;
-  left: 50%;
-  top: 280%;
-}
+  @include respond-to(medium) {
+    height: 3000px;
+  }
 
-.main-heading-container {
-  z-index: 0;
-  position: absolute;
-  top: 25%;
-  left: 35%;
-}
-.main-heading {
-  position: absolute;
-  width: 641px;
-  height: 214px;
-  left: calc(50% - 641px / 2 + 201.5px);
-  top: 25%;
-  font-family: "Futurina", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 150px;
-  line-height: 107px;
-  color: #ffffff;
+  @include respond-to(large) {
+    height: 5300px;
+  }
 }
 
 .connect-wallet {
+  z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  gap: 20px;
   user-select: none;
   position: absolute;
-  left: 87%;
-  top: 32px;
   background: #4647c5;
-  border-radius: 10px;
-  width: 10%;
-  height: 2%;
   font-family: "Noto-Sans";
   font-style: normal;
-  font-weight: 700;
-  font-size: 25px;
   line-height: 22px;
   color: #ffffff;
   flex: none;
-  order: 0;
   flex-grow: 0;
+  text-align: center;
+
+  @include respond-to(small) {
+    font-weight: 700;
+    font-size: 15px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    right: 10px;
+    top: 10px;
+  }
+
+  @include respond-to(medium) {
+    font-weight: 700;
+    font-size: 25px;
+    width: 10%;
+    height: 2%;
+    left: 87%;
+    top: 32px;
+  }
+
+  @include respond-to(large) {
+    font-weight: 700;
+    font-size: 25px;
+    width: 10%;
+    height: 2%;
+    left: 87%;
+    top: 32px;
+  }
 }
 
 .connect-wallet:active {
@@ -75,72 +114,205 @@
   transform: translateY(3px);
 }
 
-.join-discord {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  gap: 20px;
-  user-select: none;
+.pink-creature {
   position: absolute;
-  left: 40.5%;
-  top: 205%;
-  background: #4647c5;
-  border-radius: 10px;
-  width: 18%;
-  height: 4%;
-  font-family: "Noto-Sans";
+  top: auto;
+  left: 0;
+
+  @include respond-to(small) {
+    width: 300px; // Full width on small screens
+    top: 42px;
+  }
+
+  @include respond-to(medium) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @include respond-to(large) {
+    position: absolute;
+    top: auto;
+    left: 0;
+  }
+}
+
+.main-heading-container {
+  position: absolute;
+
+  @include respond-to(small) {
+    width: 195px;
+    height: 107px;
+    right: 8px;
+    top: 10%;
+  }
+
+  @include respond-to(medium) {
+    width: 641px;
+    height: 214px;
+    left: 20%;
+    top: 25%;
+  }
+
+  @include respond-to(large) {
+    width: 641px;
+    height: 214px;
+    left: 20%;
+    top: 25%;
+  }
+}
+
+.main-heading {
+  position: absolute;
+  font-family: "Futurina", sans-serif;
   font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 22px;
+  font-weight: 400;
+  line-height: 107px;
   color: #ffffff;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+
+  @include respond-to(small) {
+    font-family: "Futurina", sans-serif;
+    font-style: normal;
+    font-weight: 250;
+    font-size: 28px;
+    line-height: 25px;
+    color: #ffffff;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
 }
 
-.join-discord:active {
-  box-shadow: 0 1px #0056b3;
-  transform: translateY(3px);
-}
-
-.middle-image {
-  position: relative;
+.top-image {
+  position: absolute;
   width: 100%;
-  height: 2160px;
-  top: 1500px;
+  height: 1620px;
+  z-index: 0;
+
+  @include respond-to(small) {
+    width: 100%; // Full width on small screens
+    height: 650px;
+  }
+
+  @include respond-to(medium) {
+    width: 150%; // 75% width on medium screens
+  }
+
+  @include respond-to(large) {
+    width: 100%; // 50% width on large screens
+  }
 }
 
-.middle-text-box {
-  position: absolute;
-  width: 50%;
-  height: 124px;
-  left: 25%;
-  top: 1305px;
+.top-text-box {
+  z-index: 1;
+  @include respond-to(small) {
+    width: 320px;
+    height: 124px;
+    margin-top: 380px;
+    //push div down 200px
+  }
+
+  @include respond-to(medium) {
+    width: 50%;
+    height: 124px;
+    left: 25%;
+    top: 1305px;
+  }
+
+  @include respond-to(large) {
+    width: 50%;
+    height: 124px;
+    left: 25%;
+    top: 1305px;
+  }
 }
 
-.middle-text-heading {
-  font-family: "Krona-One";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 50px;
-  text-align: center;
-  color: #ffffff;
+.top-text-heading {
+  @include respond-to(small) {
+    font-family: "Krona-One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  @include respond-to(medium) {
+    font-family: "Krona-One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  @include respond-to(large) {
+    font-family: "Krona-One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    color: #ffffff;
+  }
 }
 
-.middle-text-description {
-  left: calc(50% - 766px / 2);
-  top: 1443px;
-  font-family: "Krona-One";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  color: #ffffff;
+.top-text-description {
+  @include respond-to(small) {
+    left: calc(50% - 766px / 2);
+    top: 1443px;
+    font-family: "Krona-One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 18px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  @include respond-to(medium) {
+    left: calc(50% - 766px / 2);
+    top: 1443px;
+    font-family: "Krona-One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  @include respond-to(large) {
+    left: calc(50% - 766px / 2);
+    top: 1443px;
+    font-family: "Krona-One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+.middle-container {
+  position: relative;
+  @include respond-to(small) {
+    height: 300px;
+  }
+
+  @include respond-to(medium) {
+    height: 3000px;
+  }
+
+  @include respond-to(large) {
+    height: 5300px;
+  }
 }
 
 .avatar-example-image-container {
@@ -149,94 +321,320 @@
   align-items: flex-start;
   padding: 0px;
   gap: 67px;
+  z-index: 1;
+
+  @include respond-to(small) {
+    height: 30px;
+    display: flex;
+    flex-direction: column; // Align children vertically
+    justify-content: center; // Center children along the main axis (vertically)
+    align-items: center; // Center children along the cross axis (horizontally)
+    gap: 15px; // Spacing between images
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
+}
+
+.avatar-image {
+  @include respond-to(small) {
+    width: 250px; // Set width of images
+    height: 250px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
+}
+
+.blue-creature {
+  @include respond-to(small) {
+    position: absolute;
+    width: 250px;
+    height: 380px;
+    left: 34%;
+    top: 77px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
+}
+
+.join-discord-btn-container {
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+
+  @include respond-to(small) {
+    margin-top: 200px;
+    display: flex;
+    height: 150px;
+    justify-content: center; // Center children along the main axis (vertically)
+    align-items: center; // Center children along the cross axis (horizontally)
+    gap: 10px; // Spacing between images
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
+}
+
+.join-discord {
+  display: flex;
+  justify-content: center; // Center horizontally
+  align-items: center;
+  user-select: none;
+  font-family: "Noto-Sans";
+  background: #4647c5;
+  border-radius: 10px;
+  font-style: normal;
+  color: #ffffff;
+
+  @include respond-to(small) {
+    font-weight: 650;
+    font-size: 25px;
+    line-height: 22px;
+    margin-top: 350px;
+    width: 200px;
+    height: 60px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
+}
+
+.join-discord:active {
+  box-shadow: 0 1px #0056b3;
+  transform: translateY(3px);
+}
+.middle-image-container {
   position: absolute;
-  width: 80%;
-  height: 341px;
-  left: calc(50% - 1157px / 2 + 2.5px);
-  top: 163%;
+
+  @include respond-to(small) {
+    top: 580px;
+    height: 800px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
+}
+
+.middle-image {
+  z-index: 0;
+  width: 100%;
 }
 
 .lower-mid-text-box {
-  position: absolute;
-  width: 1088px;
-  height: 50px;
-  left: calc(50% - 1088px / 2 + 24px);
-  top: 2700px;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+
+  @include respond-to(small) {
+    height: 124px;
+    margin-top: 200px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
 }
 
 .lower-mid-heading {
   font-family: "Krona-One";
   font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 50px;
-  text-align: center;
   color: #ffffff;
+
+  @include respond-to(small) {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+  }
+
+  @include respond-to(medium) {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  @include respond-to(large) {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+  }
 }
 
 .mid-mid-description {
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
   text-align: center;
   color: #ffffff;
+  @include respond-to(small) {
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 10px;
+  }
+
+  @include respond-to(medium) {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @include respond-to(large) {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 
 .mid-lower-description {
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
   text-align: center;
   color: #ffffff;
+  @include respond-to(small) {
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 10px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
 }
 
 .blue-creature-text-box {
   position: absolute;
-  width: 650px;
-  height: 430px;
-  left: 18%;
-  top: 3500px;
+  z-index: 1;
+  @include respond-to(small) {
+    width: 180px;
+    height: auto;
+    left: 18px;
+    top: 780px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
 }
 
 .blue-creature-text-box-heading {
   font-family: "Krona-One";
   font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 50px;
   color: #ffffff;
+  @include respond-to(small) {
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 10px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
 }
 
 .blue-creature-description-text-box {
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 800;
-  font-size: 20px;
-  line-height: 30px;
   color: #ffffff;
+  @include respond-to(small) {
+    font-weight: 200;
+    font-size: 6px;
+    line-height: 10px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  top: 300px;
+
+  z-index: 1;
+  @include respond-to(small) {
+    height: 500px;
+  }
+
+  @include respond-to(medium) {
+    height: 3000px;
+  }
+
+  @include respond-to(large) {
+    height: 5300px;
+  }
 }
 
 .join-community-text-box {
-  position: absolute;
-  width: 758px;
-  height: 290px;
-  left: 30%;
-  top: 4400px;
+  position: relative;
+  @include respond-to(small) {
+    margin-top: 400px;
+    font-weight: 200;
+    font-size: 6px;
+    line-height: 10px;
+    width: 300px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
 }
 .join-community-heading {
+  z-index: 10;
   font-family: "Krona-One";
   font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 50px;
   text-align: center;
   color: #ffffff;
+  @include respond-to(small) {
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 10px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
 }
 .join-community-description {
+  z-index: 10;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
@@ -244,36 +642,72 @@
   line-height: 30px;
   text-align: center;
   color: #ffffff;
+  @include respond-to(small) {
+    font-weight: 200;
+    font-size: 6px;
+    line-height: 10px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
 }
 
 .footer-text-box {
   position: absolute;
-  width: 967px;
-  height: 60px;
-  left: 26%;
-  top: 4950px;
+  text-align: center;
+  @include respond-to(small) {
+    width: 320px;
+    height: 60px;
+    width: 300px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
 }
 
 .footer-text {
   font-family: "Krona-One";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 30px;
-  text-align: center;
+  font-size: 8px;
+  line-height: 10px;
+
   color: #ffffff;
+  @include respond-to(small) {
+    margin-top: 550px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
 }
 
 .socials-icon-box {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 40px;
-
   position: absolute;
-  width: 233.04px;
-  height: 51.03px;
-  left: calc(50% - 233.04px / 2 - 0.48px);
-  top: 5070px;
+  z-index: 1;
+  @include respond-to(small) {
+    font-weight: 200;
+    font-size: 6px;
+    line-height: 10px;
+    margin-top: 680px;
+  }
+
+  @include respond-to(medium) {
+  }
+
+  @include respond-to(large) {
+  }
+}
+
+.socials-image:active {
+  box-shadow: 0 1px #0056b3;
+  transform: translateY(3px);
 }
