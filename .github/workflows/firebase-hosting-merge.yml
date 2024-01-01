@@ -2,7 +2,7 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
-"on":
+on:
   push:
     branches:
       - develop
@@ -15,11 +15,16 @@ jobs:
       - name: Install Node.js and NPM
         uses: actions/setup-node@v2
         with:
-          node-version: 18
+          node-version: 16
+
+      - name: Install dependencies and run the start script
+        run: |
+          npm install
+          npm run start
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_COSMICCREATURESDEVELOP }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CLAMSCASINO_33B84 }}"
           channelId: live
           projectId: cosmiccreaturesdevelop
