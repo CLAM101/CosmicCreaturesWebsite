@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/cosmic-creatures-website",
+    "public": "dist/cosmic-creatures-website/browser",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
