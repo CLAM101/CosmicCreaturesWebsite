@@ -330,15 +330,15 @@ $large-screen-end: 6000px;
   @include respond-to(small) {
     height: 30px;
     display: flex;
-    flex-direction: column; // Align children vertically
-    justify-content: center; // Center children along the main axis (vertically)
-    align-items: center; // Center children along the cross axis (horizontally)
-    gap: 15px; // Spacing between images
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
   }
 
   @include respond-to(medium) {
     display: flex;
-    flex-direction: row; // Align children vertically
+    flex-direction: row;
     text-align: center;
     justify-content: center;
     gap: 40px;
@@ -346,7 +346,7 @@ $large-screen-end: 6000px;
 
   @include respond-to(large) {
     display: flex;
-    flex-direction: row; // Align children vertically
+    flex-direction: row;
     text-align: center;
     justify-content: center;
     gap: 40px;
@@ -355,17 +355,17 @@ $large-screen-end: 6000px;
 
 .avatar-image {
   @include respond-to(small) {
-    width: 250px; // Set width of images
+    width: 250px;
     height: 250px;
   }
 
   @include respond-to(medium) {
-    width: 230px; // Set width of images
+    width: 230px;
     height: 230px;
   }
 
   @include respond-to(large) {
-    width: 300px; // Set width of images
+    width: 300px;
     height: 300px;
   }
 }
