@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Gitflow
+
+Develop is the staging branch, master is productions, for now we don't have a production deployment.
+
+Create feature branch from develop, never create a feature branch from master unless its for a specific hotfix.
+
+Make changes on feature branch, once complete make merge request into develop for peer review.
+
+Once approved merge feature branch into develop.
+
+Periodically a production release will be done into master.
