@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
+1. Clone the repo
+2. cd into repo
+3. Run `npm i`
+4. Install angular cli `sudo apt-install ng-common`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
