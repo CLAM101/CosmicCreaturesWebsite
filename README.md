@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. Clone the repo
 2. cd into repo
 3. Run `npm i`
-4. Install angular cli `sudo apt-install ng-common`
+4. Install angular cli `npm install -g @angular/cli`
 
 ## Development server
 
