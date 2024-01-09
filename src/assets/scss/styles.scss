@@ -1,7 +1,13 @@
+// Tailwind CSS
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+// Custom CSS
+@import "typography";
+@import "fonts";
 @import "components/__components";
+
 
 html,
 body {
@@ -10,6 +16,7 @@ body {
   overflow-x: hidden;
 }
 
+// TODO: Move the below fonts into the fonts.scss file
 @font-face {
   font-family: "Futurina";
   src: url("../fonts/Futurina.otf") format("opentype");
