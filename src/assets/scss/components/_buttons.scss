@@ -1,0 +1,58 @@
+/*
+Buttons.
+*/
+
+// TODO: Get a few variations of the primary purple to use for hover/active/focus states
+// TODO: Setup font.scss
+
+@layer components {
+  .btn {
+    // TODO: Add font-body, text-18 to here once its setup
+    @apply  inline-block py-3 px-7 rounded-full text-center cursor-pointer transition duration-200 ease-in-out appearance-none font-medium;
+    position: relative;
+
+    &:focus {
+      @apply outline outline-2 outline-grey-500 outline-offset-2;
+
+      &::before {
+        content: "";
+        @apply absolute top-0 right-0 bottom-0 left-0 outline outline-2 outline-grey-100 rounded-full z-0;
+      }
+    }
+
+    &-primary {
+      @apply bg-purple text-white;
+
+      &:hover {
+        @apply bg-black;
+      }
+
+      &:active {
+        @apply bg-black;
+      }
+
+      &-disabled,
+      &:disabled,
+      &[disabled] {
+        @apply cursor-not-allowed bg-grey-500;
+      }
+
+    }
+  }
+}
+
+//z-index: 1;
+//display: flex;
+//flex-direction: row;
+//justify-content: center;
+//align-items: center;
+//user-select: none;
+//position: absolute;
+//background: #4647c5;
+//font-family: "Noto-Sans";
+//font-style: normal;
+//line-height: 22px;
+//color: #ffffff;
+//flex: none;
+//flex-grow: 0;
+//text-align: center;
