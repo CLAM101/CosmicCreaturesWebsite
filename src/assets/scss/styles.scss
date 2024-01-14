@@ -15,25 +15,3 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
-
-// TODO: Move the below fonts into the fonts.scss file
-@font-face {
-  font-family: "Futurina";
-  src: url("../fonts/Futurina.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "Noto-Sans";
-  src: url("../fonts/NotoSans-VariableFont_wdth,wght.ttf")
-    format("truetype");
-}
-
-@font-face {
-  font-family: "Krona-One";
-  src: url("../fonts/KronaOne-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
-}
