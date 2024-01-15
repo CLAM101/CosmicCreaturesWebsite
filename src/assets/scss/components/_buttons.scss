@@ -2,13 +2,9 @@
 Buttons.
 */
 
-// TODO: Setup font.scss
-
 @layer components {
   .btn {
-    // TODO: Add font-body, text-18 to here once its setup
-    @apply h-max inline-block py-3 px-7 rounded-lg text-center cursor-pointer transition duration-200 ease-in-out appearance-none font-medium;
-    position: relative;
+    @apply font-lead text-18 relative h-max inline-block py-3 px-7 rounded-lg text-center cursor-pointer transition duration-200 ease-in-out appearance-none font-medium;
 
     &:focus {
       @apply outline outline-2 outline-grey-500 outline-offset-2;
@@ -35,6 +31,10 @@ Buttons.
         @apply cursor-not-allowed bg-grey-500;
       }
 
+    }
+
+    &-lg {
+      @apply lg:py-6
     }
   }
 }
