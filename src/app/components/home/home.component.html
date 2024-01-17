@@ -38,7 +38,7 @@
   </div>
 
   <div class="middle-container">
-    <div class="avatar-example-image-container">
+    <div class="flex flex-col md:flex-row justify-between">
       <div *ngFor="let avatar of avatars">
         <app-avatar  [imageUrl]="avatar.image"></app-avatar>
       </div>
