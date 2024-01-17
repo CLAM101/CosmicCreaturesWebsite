@@ -39,9 +39,9 @@
 
   <div class="middle-container">
     <div class="avatar-example-image-container">
-      <img class="avatar-image" src="../assets/images/Frame 4.png" alt>
-      <img class="avatar-image" src="../assets/images/Frame 5.png" alt>
-      <img class="avatar-image" src="../assets/images/Frame 6.png" alt>
+      <div *ngFor="let avatar of avatars">
+        <app-avatar  [imageUrl]="avatar.image"></app-avatar>
+      </div>
     </div>
 
     <div type="button" class="btn btn-primary btn-lg z-10">

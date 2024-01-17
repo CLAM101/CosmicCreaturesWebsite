@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  avatars = [
+    { image: '../assets/images/Frame 4.png' },
+    { image: '../assets/images/Frame 5.png' },
+    { image: '../assets/images/Frame 6.png' }
+  ];
+
 }
