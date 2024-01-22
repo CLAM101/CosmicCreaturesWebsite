@@ -1,8 +1,8 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
 require("./tailwind_colours");
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["src/app/components/**/*.html"],
+  content: ["src/app/components/**/*.{html,ts}"],
   theme: {
     fontFamily: {
       display: ["Futurina", "sans-serif"],
