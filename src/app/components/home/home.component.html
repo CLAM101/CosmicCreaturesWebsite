@@ -3,46 +3,48 @@
   <section class="bg-cover bg-no-repeat"
            style="background-image: url('../assets/images/Frame 8 (2).png')">
 
-    <div class="flex">
-      <div class="w-1/2">
+    <div class="flex flex-col lg:flex-row">
+      <div class="w-full lg:w-1/2 order-2">
         <img src="../assets/images/pink-creature.png" alt="Cosmic Creatures Pink Creature">
       </div>
 
 
-      <div class="w-1/2 text-white">
-        <div class="flex flex-col items-end">
-          <div type="button" class="btn btn-primary btn-lg z-10">
-            Connect Wallet
-          </div>
-          <h1 class="type-display">Cosmic Creatures</h1>
+      <div class="p-4 flex flex-col gap-y-11 items-end w-full lg:w-1/2 text-white">
+        <div type="button" class="btn btn-primary btn-lg z-10">
+          Connect Wallet
         </div>
+        <h1 class="type-display">Cosmic Creatures</h1>
       </div>
     </div>
 
 
     <div class="flex flex-col items-center">
-      <div class="text-center w-3/4">
-        <h2 class="type-h2">Guardians of the Galactic Tapestry </h2>
 
-        <h3 class="type-lead">
-          Embark on an otherworldly journey with Cosmic Creatures, the original architects of the universe and guardians
-          of galaxies.
-          Each NFT in this creative project is a testament to ancient cosmic artistry, inviting you to become a
-          custodian
-          of the grand narrative.
-          Secure your link to the cosmic grid, own a piece of creative genesis, and join a community of cosmic
-          explorers.
-          Explore the cosmos, ignite your creativity, and embrace the timeless allure of the Cosmic Creatures NFT
-          project.
-        </h3>
-        <div>
+      <div class="w-3/4 text-center">
+        <div class="my-16">
+          <h2 class="type-h2">Guardians of the Galactic Tapestry </h2>
+
+          <h3 class="type-lead">
+            Embark on an otherworldly journey with Cosmic Creatures, the original architects of the universe and
+            guardians
+            of galaxies.
+            Each NFT in this creative project is a testament to ancient cosmic artistry, inviting you to become a
+            custodian
+            of the grand narrative.
+            Secure your link to the cosmic grid, own a piece of creative genesis, and join a community of cosmic
+            explorers.
+            Explore the cosmos, ignite your creativity, and embrace the timeless allure of the Cosmic Creatures NFT
+            project.
+          </h3>
+        </div>
+        <div class="my-16">
           <div class="flex flex-col md:flex-row justify-between gap-y-11">
             <div *ngFor="let avatar of avatars">
               <app-avatar [imageUrl]="avatar.image"></app-avatar>
             </div>
           </div>
 
-          <div type="button" class="btn btn-primary btn-lg z-10">
+          <div type="button" class="btn btn-primary btn-lg z-10 mt-16">
             Join Discord
           </div>
         </div>
@@ -76,12 +78,14 @@
         </p>
         <p class="type-lead">Stellar Origins:
         </p>
-        <p class="type-lead">Timeless Drift: As entities beyond time, these ethereal beings gracefully navigate the
-          cosmic
-          currents, their existence an ever-flowing melody.</p>
-        <p class="type-lead">Etheric Stories: Own a piece of the universe's narrative, as each Creature carries with it
-          a
-          tale woven into the fabric of galaxies.</p>
+        <p class="type-lead">
+          Timeless Drift: As entities beyond time, these ethereal beings gracefully navigate the cosmic currents, their
+          existence an ever-flowing melody.
+        </p>
+        <p class="type-lead">
+          Etheric Stories: Own a piece of the universe's narrative, as each Creature carries with it a tale woven into
+          the fabric of galaxies.
+        </p>
       </div>
       <div class="w-1/2">
         <img class="" src="../assets/images/blue-creature.png" alt="Blue Creature">
@@ -92,11 +96,14 @@
     <footer class="container mx-auto">
       <div class="flex flex-col text-center">
         <h2 class="type-h2">Join the Community</h2>
-        <p class="type-p">Celestial Exploration: Immerse yourself in the Cosmic Creatures Collection, where the stories of the
+        <p class="type-p">Celestial Exploration: Immerse yourself in the Cosmic Creatures Collection, where the stories
+          of the
           stars come to life.</p>
-        <p class="type-p">Connect with the Cosmos: Link your wallet to the cosmic grid and embrace the ethereal connection to
+        <p class="type-p">Connect with the Cosmos: Link your wallet to the cosmic grid and embrace the ethereal
+          connection to
           the original essence of time.</p>
-        <p class="type-p">Harvest Stardust: Choose your Cosmic Creature and become a custodian of the celestial heritage, a
+        <p class="type-p">Harvest Stardust: Choose your Cosmic Creature and become a custodian of the celestial
+          heritage, a
           keeper of stories untold.</p>
       </div>
 
@@ -116,8 +123,6 @@
 
     </footer>
   </section>
-
-
 
 
 </div>
