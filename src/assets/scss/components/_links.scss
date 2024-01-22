@@ -1,0 +1,15 @@
+.link {
+  &__social {
+    @apply cursor-pointer;
+
+    &:hover {
+
+    }
+
+    &:focus {
+        @apply outline outline-2 outline-offset-2 outline-white rounded-sm;
+        box-shadow: 0 0 0 2px var(--color-grey-100);
+    }
+
+  }
+}
